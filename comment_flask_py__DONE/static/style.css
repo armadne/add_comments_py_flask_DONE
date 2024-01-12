@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=PT+Sans+Narrow&display=swap');
+
+body 
+
+{
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: bisque;
+
+}
+
+h1
+
+{
+    text-align: center;
+}
+
+form
+
+{
+    margin-left: 1100px;
+}
+
+input
+
+{
+    font-size: medium;
+}
+
+
+textarea
+
+{
+    font-size: medium;
+    margin-left: 2px;
+}

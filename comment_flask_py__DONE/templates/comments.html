@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<h1>Comments Page</h1>
+
+
+
+{% for comment in comments %}
+
+    {{comment.name}} , {{comment.email}} , {{comment.comment}}</br> {# ajouter la balise </br> pour revenir a la ligne à chaque nouveau commentaire#}
+
+{% endfor %}
+
+
+{% endblock %}

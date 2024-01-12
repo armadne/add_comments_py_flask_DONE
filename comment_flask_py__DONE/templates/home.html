@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="style.css")}}">
+
+
+    </head>
+
+    <body>
+
+        
+
+        <nav class="navbar navbar-dark bg-dark">
+            <ul>
+
+                <a href="{{url_for('home')}}"><li>Home</li></a>
+                <a href="{{url_for('view_comment')}}"><li>Comments Page</li></a>
+                
+                
+            <ul>
+        </nav>
+
+       
+
+
+        {% block content %}
+
+        <h1>Home Page</h1></br>
+
+        <form action="/submit" method="post">
+
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="paul" required  /></br></br>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" placeholder="paul@gmail.com" required /></br></br>
+
+            
+            <label for="comment" id="comment_label">Comment: </label>
+            <textarea name="comment" id="comment" cols="25" rows="8"></textarea></br></br>
+            
+
+            <input type="submit" value="publier" />
+
+        </form>
+
+
+
+        {% for comment in comments %}
+
+            {{comment.name}} , {{comment.email}} , {{comment.comment}} </br> {# ajouter la balise </br> pour revenir a la ligne à chaque nouveau commentaire#}
+
+        {% endfor %}
+
+        
+
+        {% endblock %}
+
+
+
+    </body>
+</html>
